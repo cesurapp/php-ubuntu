@@ -41,6 +41,12 @@ ADD ./php-fpm /etc/service/php-fpm/run
 RUN chmod +x /etc/service/php-fpm/run
 
 #-------------------
+# Composer
+#-------------------
+RUN php -r "copy('https://getcomposer.org/installer', '/composer-setup.php');"
+RUN php /composer-setup.php --install-dir=/usr/local/bin --filename=composer
+
+#-------------------
 # Startup Command
 #-------------------
 RUN mkdir -p /etc/my_init.d
