@@ -30,7 +30,8 @@ RUN apt-get install -y php7.4-cli \
         php7.4-tidy \
         php7.4-xml \
         php7.4-zip \
-        php7.4-bcmath
+        php7.4-bcmath \
+        php7.4-sqlite 
 RUN mkdir /var/run/php && touch /var/run/php/php7.4-fpm.sock
 
 ADD ./php /etc/php/7.4/cli/conf.d
